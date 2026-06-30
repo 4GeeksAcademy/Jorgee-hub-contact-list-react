@@ -1,5 +1,5 @@
 export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
-		<p>Aqui va mi footer</p>
-	</footer>
+    <footer className="footer mt-auto py-3 text-center bg-secondary">
+        <p>footer</p>
+    </footer>
 );
