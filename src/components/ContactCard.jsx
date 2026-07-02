@@ -34,20 +34,20 @@ const ContactCard = ({ item }) => {
       <div>
         <h5 className="mb-1">{item.name}</h5>
         <p className="mb-1 text-muted">
-          <i className="fa-solid fa-location-dot me-2"></i> {item.address}
+          <i className="fa-solid fa-location-dot text-dark me-2"></i> {item.address}
         </p>
         <p className="mb-1 text-muted">
-          <i className="fa-solid fa-phone me-2"></i> {item.phone}
+          <i className="fa-solid fa-phone text-dark me-2"></i> {item.phone}
         </p>
         <p className="mb-0 text-muted">
-          <i className="fa-solid fa-envelope me-2"></i> {item.email}
+          <i className="fa-solid fa-envelope text-dark me-2"></i> {item.email}
         </p>
       </div>
       <Link to={`/EditContact/${item.id}`} className="btn btn-link ms-auto">
-        <i className="fa-solid fa-pen"></i>
+        <i className="icon-grow fa-solid fa-pen text-dark"></i>
       </Link>
       <button className="btn btn-link" onClick={() => setShowConfirm(true)}>
-        <i className="fa-solid fa-trash"></i>
+        <i className="icon-grow icon-hover-red fa-solid fa-trash text-dark"></i>
       </button>
       {showConfirm && (
         <div
@@ -67,7 +67,7 @@ const ContactCard = ({ item }) => {
                 className="btn btn-sm p-0 border-0"
                 onClick={() => setShowConfirm(false)}
               >
-                <i className="fa-solid fa-xmark"></i>
+                <i className="fa-solid fa-xmark text-dark"></i>
               </button>
             </div>
             <p className="text-muted small">
@@ -75,13 +75,13 @@ const ContactCard = ({ item }) => {
             </p>
             <div className="d-flex justify-content-end gap-2">
               <button
-                className="btn btn-primary btn-sm"
+                className="btn btn-dark btn-sm icon-grow"
                 onClick={() => setShowConfirm(false)}
               >
                 No
               </button>
               <button
-                className="btn btn-dark btn-sm"
+                className="btn btn-dark btn-sm icon-grow icon-hover-red"
                 onClick={confirmDelete}
               >
                 Yes

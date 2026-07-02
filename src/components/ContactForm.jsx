@@ -21,7 +21,7 @@ const ContactForm = () => {
         if (isEditing) {
             const fetchContact = async () => {
                 try {
-                    const response = await fetch(`https://playground.4geeks.com/contact/agendas/Jorgee-hub/contacts/${id}`);
+                    const response = await fetch(`https://playground.4geeks.com/contact/agendas/jorgee-hub/contacts/${id}`);
                     const data = await response.json();
                     setContact({
                         fullName: data.name,
@@ -40,8 +40,8 @@ const ContactForm = () => {
     const handleSave = async () => {
         try {
             const url = isEditing
-                ? `https://playground.4geeks.com/contact/agendas/Jorgee-hub/contacts/${id}`
-                : "https://playground.4geeks.com/contact/agendas/Jorgee-hub/contacts";
+                ? `https://playground.4geeks.com/contact/agendas/jorgee-hub/contacts/${id}`
+                : "https://playground.4geeks.com/contact/agendas/jorgee-hub/contacts";
 
             const method = isEditing ? "PUT" : "POST";
 
@@ -74,7 +74,7 @@ const ContactForm = () => {
     return (
         <div>
             <div className="container mt-4">
-                <h2 className="text-center fw-bold mb-4">
+                <h2 className="text-center mb-4">
                     {isEditing ? "Edit contact" : "Add a new contact"}
                 </h2>
                 <div className="mb-3">
@@ -93,7 +93,7 @@ const ContactForm = () => {
                     <label className="form-label fw-bold">Address</label>
                     <input type="text" name="address" placeholder="Address" className="form-control" value={contact.address} onChange={handleChange} />
                 </div>
-                <button onClick={handleSave} className="btn btn-primary w-100">save</button>
+                <button onClick={handleSave} className="btn btn-dark w-100">save</button>
                 <Link to="/" className="d-block mt-2">or get back to contacts</Link>
             </div>
         </div>
