@@ -6,7 +6,8 @@ export const Navbar = () => {
 		<div>
 			<nav className="navbar navbar-light bg-light">
 				<div className="container-fluid">
-					<Link to="/AddNewContact" className="btn btn-success ms-auto">
+					<h1 className="text-dark ">Contact List</h1>
+					<Link to="/AddNewContact" className="btn btn-dark icon-grow">
 						Add new contact
 					</Link>
 				</div>
