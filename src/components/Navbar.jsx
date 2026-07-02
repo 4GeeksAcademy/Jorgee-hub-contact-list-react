@@ -4,8 +4,8 @@ export const Navbar = () => {
 
 	return (
 		<div>
-			<nav class="navbar navbar-light bg-light">
-				<div class="container-fluid">
+			<nav className="navbar navbar-light bg-light">
+				<div className="container-fluid">
 					<Link to="/AddNewContact" className="btn btn-success ms-auto">
 						Add new contact
 					</Link>

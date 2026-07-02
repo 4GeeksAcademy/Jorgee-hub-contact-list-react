@@ -8,10 +8,10 @@ const ContactCard = ({ item }) => {
 
   const confirmDelete = async () => {
     try {
-      const response = await fetch(`https://playground.4geeks.com/contact/agendas/Jorgee-hub/contacts/${item.id}`, {
+      const response = await fetch(`https://playground.4geeks.com/contact/agendas/jorgee-hub/contacts/${item.id}`, {
         method: "DELETE"
       });
-      console.log("Deleted:", item.id);
+      if (!response.ok) throw new Error(`Error al borrar: ${response.status}`);
       dispatch({ type: "delete_contact", payload: item.id });
     } catch (error) {
       console.log(error);
@@ -20,7 +20,17 @@ const ContactCard = ({ item }) => {
   };
 
   return (
-    <div className="d-flex align-items-center border-bottom py-3 ms-3">
+    <div className="d-flex align-items-center border-bottom py-3">
+      <img
+        src={item.image || "https://placehold.co/90"}
+        alt={item.name}
+        className="rounded-circle me-4"
+        style={{ width: "90px", height: "90px", objectFit: "cover" }}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = "https://placehold.co/90";
+        }}
+      />
       <div>
         <h5 className="mb-1">{item.name}</h5>
         <p className="mb-1 text-muted">
@@ -33,15 +43,12 @@ const ContactCard = ({ item }) => {
           <i className="fa-solid fa-envelope me-2"></i> {item.email}
         </p>
       </div>
-
       <Link to={`/EditContact/${item.id}`} className="btn btn-link ms-auto">
         <i className="fa-solid fa-pen"></i>
       </Link>
-
       <button className="btn btn-link" onClick={() => setShowConfirm(true)}>
         <i className="fa-solid fa-trash"></i>
       </button>
-
       {showConfirm && (
         <div
           className="card shadow position-fixed"
@@ -60,7 +67,7 @@ const ContactCard = ({ item }) => {
                 className="btn btn-sm p-0 border-0"
                 onClick={() => setShowConfirm(false)}
               >
-                
+                <i className="fa-solid fa-xmark"></i>
               </button>
             </div>
             <p className="text-muted small">

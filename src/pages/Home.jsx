@@ -8,7 +8,7 @@ export const Home = () => {
 	const { store, dispatch } = useGlobalReducer()
 	const getContacts = async () => {
 		try {
-			const response = await fetch("https://playground.4geeks.com/contact/agendas/Jorgee-hub/contacts");
+			const response = await fetch("https://playground.4geeks.com/contact/agendas/jorgee-hub/contacts");
 			const data = await response.json();
 			dispatch({ type: "add_contacts", payload: data.contacts })
 		} catch (error) {
