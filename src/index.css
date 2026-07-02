@@ -1,0 +1,15 @@
+h1, h2, h3{
+    font-family:"Poppins";
+}
+.icon-hover-red:hover {
+  color: #dc3545 !important;
+  cursor: pointer;
+}
+.icon-grow {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.icon-grow:hover {
+  transform: scale(1.3);
+}
